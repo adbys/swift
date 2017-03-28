@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="eBt-QM-tKm">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Podcasts Table View Controller-->
+        <scene sceneID="e1W-zO-Muy">
+            <objects>
+                <tableViewController id="eBt-QM-tKm" customClass="PodcastsTableViewController" customModule="PodcastsTableView" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="117" sectionHeaderHeight="28" sectionFooterHeight="28" id="2uE-DT-TI9">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="podcastIdentifier" rowHeight="117" id="n2D-F5-Q1f" customClass="PodcastTableViewCell" customModule="PodcastsTableView" customModuleProvider="target">
+                                <rect key="frame" x="0.0" y="28" width="375" height="117"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="n2D-F5-Q1f" id="vjM-qx-cql">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="116"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="7jD-Bn-7cW">
+                                            <rect key="frame" x="8" y="16" width="359" height="90"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LkG-0g-U7D">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" secondItem="LkG-0g-U7D" secondAttribute="height" multiplier="1:1" id="YMv-41-4uu"/>
+                                                        <constraint firstAttribute="height" constant="90" id="xbo-V4-VFX"/>
+                                                    </constraints>
+                                                </imageView>
+                                                <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="Vvm-nr-6wy">
+                                                    <rect key="frame" x="98" y="0.0" width="261" height="90"/>
+                                                    <subviews>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qiJ-zc-9qy">
+                                                            <rect key="frame" x="0.0" y="0.0" width="261" height="61.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="252" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bIE-29-J66">
+                                                            <rect key="frame" x="0.0" y="69.5" width="261" height="20.5"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                            <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                    </subviews>
+                                                </stackView>
+                                            </subviews>
+                                        </stackView>
+                                    </subviews>
+                                    <constraints>
+                                        <constraint firstItem="7jD-Bn-7cW" firstAttribute="top" secondItem="vjM-qx-cql" secondAttribute="topMargin" constant="8" id="oCB-Y1-mpb"/>
+                                        <constraint firstItem="7jD-Bn-7cW" firstAttribute="leading" secondItem="vjM-qx-cql" secondAttribute="leadingMargin" id="oUt-BH-Y8e"/>
+                                        <constraint firstAttribute="trailingMargin" secondItem="7jD-Bn-7cW" secondAttribute="trailing" id="sxC-dL-gzi"/>
+                                    </constraints>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="descricaoPodcast" destination="bIE-29-J66" id="axF-eI-eJY"/>
+                                    <outlet property="fotoDoPodcast" destination="LkG-0g-U7D" id="rfV-7i-BYf"/>
+                                    <outlet property="nomeDoPodcast" destination="qiJ-zc-9qy" id="QH1-Cj-bl1"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="eBt-QM-tKm" id="I36-VG-9MJ"/>
+                            <outlet property="delegate" destination="eBt-QM-tKm" id="EDq-FQ-tzF"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bgb-OB-8re" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="524" y="135.38230884557723"/>
+        </scene>
+    </scenes>
+</document>
